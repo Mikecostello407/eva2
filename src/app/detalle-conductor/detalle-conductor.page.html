@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title >
+      <ion-button [routerLink]="['/conductores']">Atras</ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="detalleConductor">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="detalleConductor.image" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ detalleConductor.firstName }}</h2>
+        <h3>{{ detalleConductor.lastName }}</h3>
+        <p>{{ detalleConductor.email }}</p>
+        <ion-button (click)="showloginalert()" [routerLink]="['/home']">Iniciar Viaje</ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+ 
+</ion-content>

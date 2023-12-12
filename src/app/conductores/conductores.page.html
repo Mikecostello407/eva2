@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Conductores</ion-title>
+    <ion-button [routerLink]="['/home']">Volver</ion-button>
+    <ion-button (click)="logout()">Cerrar Sesion</ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="welcome-message">
+    ¡Bienvenido, {{ username }}
+    estos son los conductores disponibles!
+  </div>
+  <ul><li *ngFor="let conductor of conductores.users">
+    <ion-item>
+      <ion-label>{{ conductor.firstName }}</ion-label>
+      <ion-button [routerLink]="['../detalle-conductor', conductor.id]">Ver Detalle</ion-button>
+    </ion-item>
+  </li></ul>
+
+    
+  
+</ion-content>
